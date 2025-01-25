@@ -7,6 +7,6 @@ import java.util.List;
 
 @Data
 @Document(collection = "electeurs")
-public class Electeur extends Utilisateur {
+public class Electeur extends User {
     private List<Vote> votes;
 }

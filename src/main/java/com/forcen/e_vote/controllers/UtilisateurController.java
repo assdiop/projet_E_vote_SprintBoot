@@ -1,21 +1,22 @@
 package com.forcen.e_vote.controllers;
 
-import com.forcen.e_vote.entities.Utilisateur;
-import com.forcen.e_vote.services.UtilisateurService;
+import com.forcen.e_vote.dtos.UserDTO;
+import com.forcen.e_vote.entities.User;
+import com.forcen.e_vote.services.UserService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/utilisateurs")
+@RequestMapping("/user")
 public class UtilisateurController {
-    private final UtilisateurService utilisateurService;
+    private final UserService userService;
 
-    public UtilisateurController(UtilisateurService utilisateurService) {
-        this.utilisateurService = utilisateurService;
+    public UtilisateurController(UserService userService) {
+        this.userService = userService;
     }
 
     @PostMapping
-    public Utilisateur creerUtilisateur(@RequestBody Utilisateur utilisateur) {
-        return utilisateurService.creerUtilisateur(utilisateur);
+    public User createUser(@RequestBody UserDTO user) {
+        return userService.creerUtilisateur(user);
     }
 }
 

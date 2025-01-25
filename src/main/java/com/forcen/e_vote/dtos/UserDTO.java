@@ -9,7 +9,7 @@ import lombok.Data;
 import java.util.Date;
 
 @Data
-public class UtilisateurDTO {
+public class UserDTO {
     private Long id;
 
     @NotBlank(message = "Le prénom est obligatoire")
